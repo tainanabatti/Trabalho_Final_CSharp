@@ -107,7 +107,7 @@
             // 
             this.exit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.Location = new System.Drawing.Point(70, 999);
+            this.exit.Location = new System.Drawing.Point(23, 760);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(197, 69);
             this.exit.TabIndex = 6;
@@ -118,7 +118,7 @@
             // 
             this.prev.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prev.Location = new System.Drawing.Point(859, 999);
+            this.prev.Location = new System.Drawing.Point(812, 760);
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(197, 69);
             this.prev.TabIndex = 7;
@@ -129,7 +129,7 @@
             // 
             this.next.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.next.Location = new System.Drawing.Point(1080, 999);
+            this.next.Location = new System.Drawing.Point(1033, 760);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(197, 69);
             this.next.TabIndex = 8;
