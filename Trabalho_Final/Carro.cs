@@ -37,16 +37,27 @@ namespace Trabalho_Final
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            Carro FormCarro = new Carro();
-            FormCarro.Show();
-        }
+   
 
         private void Next_Click(object sender, EventArgs e)
         {
             DadosComp FormDados = new DadosComp();
-            FormDados.Show();
+            FormDados.ShowDialog();
+        }
+
+        private void Prev_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+
+            for (int intIndex = Application.OpenForms.Count - 1; intIndex >= 0; intIndex--)
+            {
+                if (Application.OpenForms[intIndex] != this)
+                    Application.OpenForms[intIndex].Close();
+            }
         }
     }
 }

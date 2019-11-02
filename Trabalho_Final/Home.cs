@@ -20,7 +20,7 @@ namespace Trabalho_Final
         private void Button1_Click(object sender, EventArgs e)
         {
             Carro FormCarro= new Carro();
-            FormCarro.Show();
+            FormCarro.ShowDialog();
         }
     }
 }

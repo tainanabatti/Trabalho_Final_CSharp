@@ -111,8 +111,9 @@
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(197, 69);
             this.exit.TabIndex = 6;
-            this.exit.Text = "button1";
+            this.exit.Text = "Sair";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // prev
             // 
@@ -122,8 +123,9 @@
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(197, 69);
             this.prev.TabIndex = 7;
-            this.prev.Text = "button2";
+            this.prev.Text = "Voltar";
             this.prev.UseVisualStyleBackColor = true;
+            this.prev.Click += new System.EventHandler(this.Prev_Click);
             // 
             // next
             // 
@@ -133,7 +135,7 @@
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(197, 69);
             this.next.TabIndex = 8;
-            this.next.Text = "button3";
+            this.next.Text = "Avançar";
             this.next.UseVisualStyleBackColor = true;
             this.next.Click += new System.EventHandler(this.Next_Click);
             // 

@@ -10,35 +10,24 @@ using System.Windows.Forms;
 
 namespace Trabalho_Final
 {
-    public partial class DadosComp : Form
+    public partial class Cobertura : Form
     {
-
-        public enum BlahEnum
-        { Active = 0, Canceled = 3}
-
-
-    public DadosComp()
+        public Cobertura()
         {
             InitializeComponent();
-
-            comboBox1.DataSource = Enum.GetValues(typeof(BlahEnum));
-
         }
 
-        private void Label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            Cobertura FormCob = new Cobertura();
+            Calculo FormCob = new Calculo();
             FormCob.ShowDialog();
+
+ 
         }
 
         private void Prev_Click(object sender, EventArgs e)
@@ -54,12 +43,6 @@ namespace Trabalho_Final
                 if (Application.OpenForms[intIndex] != this)
                     Application.OpenForms[intIndex].Close();
             }
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            comboBox1.SelectedItem = BlahEnum.Active;
         }
     }
 }
