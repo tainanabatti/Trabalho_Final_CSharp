@@ -34,10 +34,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.exit = new System.Windows.Forms.Button();
-            this.prev = new System.Windows.Forms.Button();
-            this.next = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btPrev = new System.Windows.Forms.Button();
+            this.btNext = new System.Windows.Forms.Button();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
+            this.cbModelo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 213);
+            this.label2.Location = new System.Drawing.Point(22, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(806, 113);
@@ -69,7 +70,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 353);
+            this.label3.Location = new System.Drawing.Point(49, 308);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(378, 113);
@@ -110,52 +111,62 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Valor do carro";
             // 
-            // exit
+            // btSair
             // 
-            this.exit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.Location = new System.Drawing.Point(31, 935);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(263, 85);
-            this.exit.TabIndex = 6;
-            this.exit.Text = "Sair";
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.Exit_Click);
+            this.btSair.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Location = new System.Drawing.Point(31, 935);
+            this.btSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(263, 85);
+            this.btSair.TabIndex = 6;
+            this.btSair.Text = "Sair";
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // prev
+            // btPrev
             // 
-            this.prev.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prev.Location = new System.Drawing.Point(1083, 935);
-            this.prev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.prev.Name = "prev";
-            this.prev.Size = new System.Drawing.Size(263, 85);
-            this.prev.TabIndex = 7;
-            this.prev.Text = "Voltar";
-            this.prev.UseVisualStyleBackColor = true;
-            this.prev.Click += new System.EventHandler(this.Prev_Click);
+            this.btPrev.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPrev.Location = new System.Drawing.Point(1083, 935);
+            this.btPrev.Margin = new System.Windows.Forms.Padding(4);
+            this.btPrev.Name = "btPrev";
+            this.btPrev.Size = new System.Drawing.Size(263, 85);
+            this.btPrev.TabIndex = 7;
+            this.btPrev.Text = "Voltar";
+            this.btPrev.UseVisualStyleBackColor = true;
+            this.btPrev.Click += new System.EventHandler(this.Prev_Click);
             // 
-            // next
+            // btNext
             // 
-            this.next.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.next.Location = new System.Drawing.Point(1377, 935);
-            this.next.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(263, 85);
-            this.next.TabIndex = 8;
-            this.next.Text = "Avançar";
-            this.next.UseVisualStyleBackColor = true;
-            this.next.Click += new System.EventHandler(this.Next_Click);
+            this.btNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNext.Location = new System.Drawing.Point(1377, 935);
+            this.btNext.Margin = new System.Windows.Forms.Padding(4);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(263, 85);
+            this.btNext.TabIndex = 8;
+            this.btNext.Text = "Avançar";
+            this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.Next_Click);
             // 
-            // comboBox1
+            // cbMarca
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(834, 267);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(430, 24);
-            this.comboBox1.TabIndex = 9;
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Location = new System.Drawing.Point(53, 261);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(430, 24);
+            this.cbMarca.TabIndex = 9;
+            this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.CbMarca_SelectedIndexChanged);
+            // 
+            // cbModelo
+            // 
+            this.cbModelo.FormattingEnabled = true;
+            this.cbModelo.Location = new System.Drawing.Point(53, 444);
+            this.cbModelo.Name = "cbModelo";
+            this.cbModelo.Size = new System.Drawing.Size(430, 24);
+            this.cbModelo.TabIndex = 10;
+            this.cbModelo.SelectedIndexChanged += new System.EventHandler(this.CbModelo_SelectedIndexChanged);
             // 
             // Carro
             // 
@@ -164,10 +175,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1887, 1102);
             this.ControlBox = false;
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.next);
-            this.Controls.Add(this.prev);
-            this.Controls.Add(this.exit);
+            this.Controls.Add(this.cbModelo);
+            this.Controls.Add(this.cbMarca);
+            this.Controls.Add(this.btNext);
+            this.Controls.Add(this.btPrev);
+            this.Controls.Add(this.btSair);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -175,7 +187,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Carro";
             this.Text = "Carro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -192,9 +204,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Button prev;
-        private System.Windows.Forms.Button next;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Button btPrev;
+        private System.Windows.Forms.Button btNext;
+        private System.Windows.Forms.ComboBox cbMarca;
+        private System.Windows.Forms.ComboBox cbModelo;
     }
 }

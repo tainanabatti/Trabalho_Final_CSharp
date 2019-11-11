@@ -47,9 +47,10 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1549, 113);
+            this.label1.Size = new System.Drawing.Size(2048, 141);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Assinale as coberturas desejadas";
+            this.label1.Text = "Selecione  as coberturas desejadas";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // checkBox1
             // 
@@ -57,7 +58,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(16, 193);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(354, 123);
             this.checkBox1.TabIndex = 15;
@@ -71,7 +72,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.Location = new System.Drawing.Point(16, 342);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(783, 123);
             this.checkBox2.TabIndex = 16;
@@ -84,7 +85,7 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.Location = new System.Drawing.Point(16, 491);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(1426, 123);
             this.checkBox3.TabIndex = 17;
@@ -97,7 +98,7 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox4.Location = new System.Drawing.Point(16, 640);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(1066, 123);
             this.checkBox4.TabIndex = 18;
@@ -110,7 +111,7 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox5.Location = new System.Drawing.Point(16, 789);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(868, 123);
             this.checkBox5.TabIndex = 19;
@@ -122,7 +123,7 @@
             this.next.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.next.Location = new System.Drawing.Point(1412, 946);
-            this.next.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.next.Margin = new System.Windows.Forms.Padding(4);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(263, 85);
             this.next.TabIndex = 22;
@@ -135,7 +136,7 @@
             this.prev.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prev.Location = new System.Drawing.Point(1117, 946);
-            this.prev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prev.Margin = new System.Windows.Forms.Padding(4);
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(263, 85);
             this.prev.TabIndex = 21;
@@ -148,7 +149,7 @@
             this.exit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Location = new System.Drawing.Point(65, 946);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(263, 85);
             this.exit.TabIndex = 20;
@@ -171,7 +172,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Cobertura";
             this.Text = "Cobertura";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

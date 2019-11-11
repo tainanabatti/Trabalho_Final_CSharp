@@ -19,6 +19,8 @@ namespace Trabalho_Final
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            InicializarDB inicializaDB = new InicializarDB();
+            inicializaDB.initialize();
             Carro FormCarro= new Carro();
             FormCarro.ShowDialog();
         }

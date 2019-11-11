@@ -90,7 +90,7 @@
             this.next.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.next.Location = new System.Drawing.Point(1403, 918);
-            this.next.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.next.Margin = new System.Windows.Forms.Padding(4);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(263, 85);
             this.next.TabIndex = 12;
@@ -103,7 +103,7 @@
             this.prev.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prev.Location = new System.Drawing.Point(1108, 918);
-            this.prev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prev.Margin = new System.Windows.Forms.Padding(4);
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(263, 85);
             this.prev.TabIndex = 11;
@@ -116,7 +116,7 @@
             this.exit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Location = new System.Drawing.Point(56, 918);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(263, 85);
             this.exit.TabIndex = 10;
@@ -129,7 +129,7 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(679, 491);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(733, 121);
             this.comboBox1.TabIndex = 13;
@@ -149,7 +149,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DadosComp";
             this.Text = "DadosComp";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

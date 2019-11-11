@@ -44,5 +44,10 @@ namespace Trabalho_Final
                     Application.OpenForms[intIndex].Close();
             }
         }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
