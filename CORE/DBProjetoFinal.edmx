@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DBProjetoFinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Apolices">
           <Key>
             <PropertyRef Name="Id" />
@@ -131,7 +131,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DBModelStoreContainer">
+        <EntityContainer Name="DBProjetoFinalModelStoreContainer">
           <EntitySet Name="Apolices" EntityType="Self.Apolices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FIPE" EntityType="Self.FIPE" Schema="dbo" store:Type="Tables" />
@@ -162,7 +162,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DBProjetoFinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Apolices">
           <Key>
             <PropertyRef Name="Id" />
@@ -299,7 +299,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DBProjetoFinalEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Apolices" EntityType="Self.Apolices" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
           <EntitySet Name="FIPE" EntityType="Self.FIPE" />
@@ -331,9 +331,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+        <EntityContainerMapping StorageEntityContainer="DBProjetoFinalModelStoreContainer" CdmEntityContainer="DBProjetoFinalEntities">
           <EntitySetMapping Name="Apolices">
-            <EntityTypeMapping TypeName="DBModel.Apolices">
+            <EntityTypeMapping TypeName="DBProjetoFinalModel.Apolices">
               <MappingFragment StoreEntitySet="Apolices">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
@@ -355,7 +355,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clientes">
-            <EntityTypeMapping TypeName="DBModel.Clientes">
+            <EntityTypeMapping TypeName="DBProjetoFinalModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -377,7 +377,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FIPE">
-            <EntityTypeMapping TypeName="DBModel.FIPE">
+            <EntityTypeMapping TypeName="DBProjetoFinalModel.FIPE">
               <MappingFragment StoreEntitySet="FIPE">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ModeloId" ColumnName="ModeloId" />
@@ -387,7 +387,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Marcas">
-            <EntityTypeMapping TypeName="DBModel.Marcas">
+            <EntityTypeMapping TypeName="DBProjetoFinalModel.Marcas">
               <MappingFragment StoreEntitySet="Marcas">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -395,7 +395,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Modelos">
-            <EntityTypeMapping TypeName="DBModel.Modelos">
+            <EntityTypeMapping TypeName="DBProjetoFinalModel.Modelos">
               <MappingFragment StoreEntitySet="Modelos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MarcaId" ColumnName="MarcaId" />

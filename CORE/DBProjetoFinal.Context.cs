@@ -13,10 +13,10 @@ namespace CORE
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBEntities : DbContext
+    public partial class DBProjetoFinalEntities : DbContext
     {
-        public DBEntities()
-            : base("name=DBEntities")
+        public DBProjetoFinalEntities()
+            : base("name=DBProjetoFinalEntities")
         {
         }
     
