@@ -78,6 +78,12 @@
     <Compile Include="DadosComp.Designer.cs">
       <DependentUpon>DadosComp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmImprimeDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImprimeDoc.Designer.cs">
+      <DependentUpon>FrmImprimeDoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>

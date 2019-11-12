@@ -43,70 +43,99 @@ namespace Trabalho_Final
 
         private void inicializaModelo()
         {
+            int id_marca = getIdMarca();
             if (db.Modelos.ToList().Count == 0)
             {
                 db.Modelos.Add(new Modelos()
                 {
                     Id = 1,
-                    MarcaId = 1,
+                    MarcaId = id_marca -1,
                     Nome = "Golf GTI"
                 });
                 db.Modelos.Add(new Modelos()
                 {
                     Id = 2,
-                    MarcaId = 1,
+                    MarcaId = id_marca -2,
                     Nome = "Jetta TSI"
                 });
                 db.Modelos.Add(new Modelos()
                 {
                     Id = 3,
-                    MarcaId = 2,
+                    MarcaId = id_marca,
                     Nome = "Civic"
                 });
                 db.Modelos.Add(new Modelos()
                 {
                     Id = 4,
-                    MarcaId = 3,
+                    MarcaId = id_marca,
                     Nome = "Lancer Evolution"
                 });
+
                 db.SaveChanges();
             }
         }
 
         private void inicializaFipe()
         {
-            if (db.FIPE.ToList().Count == 0)
+            int modelo_id = getIdModelo();
+        
+                if (db.FIPE.ToList().Count == 0)
+                {
+                    db.FIPE.Add(new FIPE()
+                    {
+                        Id = 1,
+                        ModeloId = modelo_id,
+                        Ano = 2018,
+                        Valor = 133254.00
+                    });
+                    db.FIPE.Add(new FIPE()
+                    {
+                        Id = 2,
+                        ModeloId = modelo_id-1,
+                        Ano = 2018,
+                        Valor = 95850.00
+                    });
+                    db.FIPE.Add(new FIPE()
+                    {
+                        Id = 3,
+                        ModeloId = modelo_id-2,
+                        Ano = 2018,
+                        Valor = 91058.00
+                    });
+                    db.FIPE.Add(new FIPE()
+                    {
+                        Id = 4,
+                        ModeloId = modelo_id,
+                        Ano = 2015,
+                        Valor = 140275.00
+                    });
+                    db.SaveChanges();
+                }
+          
+        }
+
+        private int getIdMarca()
+        {
+            List<Marcas> marcas = this.db.Marcas.ToList();
+            int id_marca = 0;
+            if (marcas != null && marcas.Count > 0)
             {
-                db.FIPE.Add(new FIPE()
-                {
-                    Id = 1,
-                    ModeloId = 1,
-                    Ano = 2018,
-                    Valor = 133254.00
-                });
-                db.FIPE.Add(new FIPE()
-                {
-                    Id = 2,
-                    ModeloId = 2,
-                    Ano = 2018,
-                    Valor = 95850.00
-                });
-                db.FIPE.Add(new FIPE()
-                {
-                    Id = 3,
-                    ModeloId = 3,
-                    Ano = 2018,
-                    Valor = 91058.00
-                });
-                db.FIPE.Add(new FIPE()
-                {
-                    Id = 4,
-                    ModeloId = 4,
-                    Ano = 2015,
-                    Valor = 140275.00
-                });
-                db.SaveChanges();
+                id_marca = marcas.Last().Id;
             }
+            id_marca = id_marca;
+            return id_marca;
+        }
+
+        private int getIdModelo()
+        {
+            List<Modelos> modelos = this.db.Modelos.ToList();
+            int id_modelo = 0;
+            if (modelos != null && modelos.Count > 0)
+            {
+                id_modelo = modelos.Last().Id;
+            }
+            id_modelo = id_modelo;
+            return id_modelo;
         }
     }
 }
