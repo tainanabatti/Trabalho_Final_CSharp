@@ -19,7 +19,6 @@ namespace Trabalho_Final
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Next_Click(object sender, EventArgs e)

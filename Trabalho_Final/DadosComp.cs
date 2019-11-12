@@ -23,6 +23,8 @@ namespace Trabalho_Final
 
             comboBox1.DataSource = Enum.GetValues(typeof(BlahEnum));
 
+
+
         }
 
         private void Label6_Click(object sender, EventArgs e)

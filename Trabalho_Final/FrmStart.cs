@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Trabalho_Final
 {
-    public partial class Home : Form
+    public partial class FrmStart : Form
     {
-        public Home()
+        public FrmStart()
         {
             InitializeComponent();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            InicializarDB inicializaDB = new InicializarDB();
-            inicializaDB.initialize();
-            Carro FormCarro= new Carro();
-            FormCarro.ShowDialog();
+            FrmMain frmMain = new FrmMain();
+            frmMain.ShowDialog();
+            InicializarDB inicializar = new InicializarDB();
+            inicializar.initialize();
         }
     }
 }

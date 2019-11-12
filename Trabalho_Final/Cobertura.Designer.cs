@@ -47,7 +47,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(2048, 141);
+            this.label1.Size = new System.Drawing.Size(1638, 113);
             this.label1.TabIndex = 11;
             this.label1.Text = "Selecione  as coberturas desejadas";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
