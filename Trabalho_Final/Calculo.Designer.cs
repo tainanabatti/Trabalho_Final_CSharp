@@ -88,7 +88,7 @@
             this.next.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.next.Location = new System.Drawing.Point(1388, 938);
-            this.next.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.next.Margin = new System.Windows.Forms.Padding(4);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(263, 85);
             this.next.TabIndex = 15;
@@ -101,7 +101,7 @@
             this.prev.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prev.Location = new System.Drawing.Point(1093, 938);
-            this.prev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prev.Margin = new System.Windows.Forms.Padding(4);
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(263, 85);
             this.prev.TabIndex = 14;
@@ -114,7 +114,7 @@
             this.exit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Location = new System.Drawing.Point(41, 938);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(263, 85);
             this.exit.TabIndex = 13;
@@ -135,7 +135,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Calculo";
             this.Text = "Calculo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

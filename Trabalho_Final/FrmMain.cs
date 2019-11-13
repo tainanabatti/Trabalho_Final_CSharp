@@ -30,6 +30,8 @@ namespace Trabalho_Final
         EnumEstado estadoBotao;
         DBProjetoFinalEntities db = new DBProjetoFinalEntities();
         Apolices apolice;
+        int fipe_id = 0;
+        int combustivel_id;
         public FrmMain()
         {
             InitializeComponent();
@@ -58,6 +60,7 @@ namespace Trabalho_Final
             cbCombustivel.DataSource = new BindingSource(combustivelCache, null);
             cbCombustivel.DisplayMember = "Key";
             cbCombustivel.ValueMember = "Value";
+            //combustivel_id = (int)cbCombustivel.SelectedValue;
 
             var categoriaMot = new Dictionary<string, string>();
             categoriaMot.Add("Categoria A", "A");
@@ -91,7 +94,7 @@ namespace Trabalho_Final
 
         private void CbbCombustivel_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            combustivel_id = (int)cbCombustivel.SelectedValue;
         }
 
         private void BtnProximo_Click(object sender, EventArgs e)
@@ -301,8 +304,8 @@ namespace Trabalho_Final
             ComboBox cb = (ComboBox)sender;
             if (cb.SelectedIndex >= 0)
             {
-                FIPE item = (FIPE)cb.SelectedItem;
-                double vlr = item.Valor;
+                fipe_id = ((FIPE)cb.SelectedItem).Id;
+                double vlr = ((FIPE)cb.SelectedItem).Valor;
                 edtValorVeiculo.Value = (decimal)vlr;
             }
         }
@@ -359,11 +362,18 @@ namespace Trabalho_Final
         {
             Apolices apolice = new Apolices();
             apolice.ClienteId = id_cliente;
-            apolice.FIPEId = (int)cbAnoModelo.SelectedValue;
+            apolice.FIPEId = fipe_id;
             apolice.AnoFabricacao = (int)edtAnoFabricacao.Value;
             apolice.Chassi = edtChassi.Text;
             apolice.Placa = edtPlaca.Text;
-            apolice.Combustivel = (int)cbCombustivel.SelectedValue;
+            if (combustivel_id != 0)
+            {
+                apolice.Combustivel = combustivel_id;
+            }
+            else
+            {
+                apolice.Combustivel = 1;
+            }
             apolice.Roubo = cboxRoubos.Checked;
             apolice.Vidros = cboxVidros.Checked;
             apolice.Acidentes = cboxAcidentes.Checked;
@@ -407,9 +417,9 @@ namespace Trabalho_Final
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            FrmImprimeDoc imp = new FrmImprimeDoc();
+            FrmRelatorio relatorio = new FrmRelatorio();
             //imp.Text(montaImpressao());
-            imp.Show();
+            relatorio.Show();
         }
 
         private void enviarEmail()
