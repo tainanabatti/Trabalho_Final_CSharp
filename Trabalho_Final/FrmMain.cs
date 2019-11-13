@@ -34,15 +34,16 @@ namespace Trabalho_Final
         {
             InitializeComponent();
 
-            //if (tabControl1.SelectedTab.Name == "tabPage2")
+            //if (tabControl1.SelectedTab.Name == "tabPage9")
             //{
-            //    if(edtValorVeiculo.Value <= 0)
+            //    if (edtChassi.Text == "")
             //    {
-            //        tabControl1.SelectedTab = tabPage1;
+            //        tabControl1.SelectedTab = tabPage2;
             //        MessageBox.Show("Primeiro informe os dados principais do produto !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //    }
             //}
-            setState(EnumEstado.DADOS_VEICULO);
+            
+            setEstado(EnumEstado.DADOS_VEICULO);
             cbMarca.DataSource = db.Marcas.ToList();
             cbMarca.DisplayMember = "Nome";
             cbMarca.ValueMember = "Id";
@@ -50,8 +51,8 @@ namespace Trabalho_Final
             combustivelCache.Add("Gasolina", 1);
             combustivelCache.Add("Álcool", 2);
             combustivelCache.Add("Diesel", 3);
-            combustivelCache.Add("Flex", 4);
-            combustivelCache.Add("GNV", 5);
+            combustivelCache.Add("GNV", 4);
+            combustivelCache.Add("Flex", 5);
             combustivelCache.Add("Elétrico", 6);
             combustivelCache.Add("Outro", 7);
             cbCombustivel.DataSource = new BindingSource(combustivelCache, null);
@@ -98,26 +99,57 @@ namespace Trabalho_Final
             switch (this.estadoBotao)
             {
                 case EnumEstado.DADOS_VEICULO:
-                    setState(EnumEstado.DADOS_VEIC_COMP);
+                    //tabControl1.Controls.Remove(tabPageDadosComp);
+                    //tabControl1.Controls.Remove(tabPageCalculo);
+                    //tabControl1.Controls.Remove(tabPageCobertura);
+                    //tabControl1.Controls.Remove(tabPageRelatorio);
+                    //tabControl1.Controls.Remove(tabPageCadastro);
+                    //tabControl1.Controls.Add(tabPageDadosComp);
+                    //tabControl1.Controls.Remove(tbPageDadosVeic);
+                    setEstado(EnumEstado.DADOS_VEIC_COMP);
+
                     break;
                 case EnumEstado.DADOS_VEIC_COMP:
-                    setState(EnumEstado.DADOS_CONTRATO);
+
+                    if (edtChassi.Text == "" || edtPlaca.Text == "")
+                    {
+                        MessageBox.Show("Preencha todos os campos obrigatórios antes de prosseguir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        //tabControl1.Controls.Remove(tabPageDadosComp);
+                        //tabControl1.Controls.Add(tabPageCobertura);
+                        setEstado(EnumEstado.DADOS_CONTRATO);
+                    }
                     break;
                 case EnumEstado.DADOS_CONTRATO:
-                    setState(EnumEstado.RESUMO);
+                    //tabControl1.Controls.Remove(tabPageCobertura);
+                    //tabControl1.Controls.Add(tabPageCalculo);
+                    setEstado(EnumEstado.RESUMO);
                     break;
                 case EnumEstado.RESUMO:
-                    setState(EnumEstado.DADOS_CLIENTE);
+                    //tabControl1.Controls.Remove(tabPageCalculo);
+                    //tabControl1.Controls.Add(tabPageCadastro);
+                    setEstado(EnumEstado.DADOS_CLIENTE);
                     break;
                 case EnumEstado.DADOS_CLIENTE:
-                    finalizarESalvar();
-                    //TODO - Salvar Dados e Imprimir
-                    setState(EnumEstado.FINALIZAR);
+
+                    if (edtNome.Text == "" || edtCpf.Text == "" || edtEmail.Text == "")
+                    {
+                        MessageBox.Show("Preencha todos os campos obrigatórios antes de prosseguir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        finalizarESalvar();
+                        setEstado(EnumEstado.FINALIZAR);
+                    }
                     break;
                 case EnumEstado.FINALIZAR:
                     break;
             }
         }
+
+       
         private void calculaValoresApolice()
         {
             double valorVeic = (double)edtValorVeiculo.Value;
@@ -151,7 +183,7 @@ namespace Trabalho_Final
             edtValorPremio.Value = (decimal)valorPremio;
         }
 
-        private void setState(EnumEstado estadoBotao)
+        private void setEstado(EnumEstado estadoBotao)
         {
             this.estadoBotao = estadoBotao;
             tabControl1.SelectedIndex = (int)estadoBotao;
@@ -160,19 +192,65 @@ namespace Trabalho_Final
             btnAnterior.Visible = this.estadoBotao != EnumEstado.FINALIZAR;
             if (this.estadoBotao == EnumEstado.RESUMO)
             {
+                tabControl1.Controls.Add(tabPageCalculo);
+                tabControl1.Controls.Remove(tbPageDadosVeic);
+                tabControl1.Controls.Remove(tabPageCobertura);
+                tabControl1.Controls.Remove(tabPageDadosComp);
+                tabControl1.Controls.Remove(tabPageRelatorio);
+                tabControl1.Controls.Remove(tabPageCadastro);
                 calculaValoresApolice();
                 btnProximo.Text = "Contratar";
             }
+            else if(this.estadoBotao == EnumEstado.DADOS_VEICULO)
+            {
+                tabControl1.Controls.Remove(tabPageDadosComp);
+                tabControl1.Controls.Remove(tabPageCalculo);
+                tabControl1.Controls.Remove(tabPageCobertura);
+                tabControl1.Controls.Remove(tabPageRelatorio);
+                tabControl1.Controls.Remove(tabPageCadastro);
+                tabControl1.Controls.Remove(tbPageDadosVeic);
+                tabControl1.Controls.Add(tbPageDadosVeic);
+
+            }
+            else if(this.estadoBotao == EnumEstado.DADOS_VEIC_COMP)
+            {
+                tabControl1.Controls.Add(tabPageDadosComp);
+                tabControl1.Controls.Remove(tbPageDadosVeic);
+                tabControl1.Controls.Remove(tabPageCalculo);
+                tabControl1.Controls.Remove(tabPageCobertura);
+                tabControl1.Controls.Remove(tabPageRelatorio);
+                tabControl1.Controls.Remove(tabPageCadastro);
+            }
+            else if (this.estadoBotao == EnumEstado.DADOS_CONTRATO)
+            {
+                tabControl1.Controls.Add(tabPageCobertura);
+                tabControl1.Controls.Remove(tbPageDadosVeic);
+                tabControl1.Controls.Remove(tabPageCalculo);
+                tabControl1.Controls.Remove(tabPageDadosComp);
+                tabControl1.Controls.Remove(tabPageRelatorio);
+                tabControl1.Controls.Remove(tabPageCadastro);
+            }
             else if (this.estadoBotao == EnumEstado.DADOS_CLIENTE)
             {
+                tabControl1.Controls.Add(tabPageCadastro);
+                tabControl1.Controls.Remove(tbPageDadosVeic);
+                tabControl1.Controls.Remove(tabPageCalculo);
+                tabControl1.Controls.Remove(tabPageDadosComp);
+                tabControl1.Controls.Remove(tabPageRelatorio);
+                tabControl1.Controls.Remove(tabPageCobertura);
                 btnProximo.Text = "Confirmar Contratação";
                 btnAnterior.Visible = false;
                 btnSair.Text = "Cancelar";
             }
             else if (this.estadoBotao == EnumEstado.FINALIZAR)
             {
+                tabControl1.Controls.Add(tabPageRelatorio);
+                tabControl1.Controls.Remove(tbPageDadosVeic);
+                tabControl1.Controls.Remove(tabPageCalculo);
+                tabControl1.Controls.Remove(tabPageDadosComp);
+                tabControl1.Controls.Remove(tabPageCadastro);
+                tabControl1.Controls.Remove(tabPageCobertura);
                 btnSair.Text = "Sair";
-
             }
             else
             {
@@ -184,17 +262,22 @@ namespace Trabalho_Final
         {
             switch (this.estadoBotao)
             {
+                case EnumEstado.DADOS_VEIC_COMP:
+                    setEstado(EnumEstado.DADOS_VEICULO);
+                    break;
                 case EnumEstado.DADOS_CONTRATO:
-                    setState(EnumEstado.DADOS_VEICULO);
+                    //tabControl1.Controls.Remove(tabPageCobertura);
+                    //tabControl1.Controls.Add(tabPageDadosComp);
+                    setEstado(EnumEstado.DADOS_VEICULO);
                     break;
                 case EnumEstado.RESUMO:
-                    setState(EnumEstado.DADOS_CONTRATO);
+                    setEstado(EnumEstado.DADOS_CONTRATO);
                     break;
                 case EnumEstado.DADOS_CLIENTE:
-                    setState(EnumEstado.RESUMO);
+                    setEstado(EnumEstado.RESUMO);
                     break;
                 case EnumEstado.FINALIZAR:
-                    setState(EnumEstado.DADOS_CLIENTE);
+                    setEstado(EnumEstado.DADOS_CLIENTE);
                     break;
             }
         }
@@ -269,7 +352,7 @@ namespace Trabalho_Final
             this.apolice = ap;
 
             MessageBox.Show("Dados Salvos Com Sucesso", "Sucesso",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private Apolices fillApoliceWithData(int id_cliente)
@@ -362,5 +445,7 @@ namespace Trabalho_Final
         {
             enviarEmail();
         }
+
+       
     }
 }

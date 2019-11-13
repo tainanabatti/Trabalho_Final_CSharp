@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tbPage1 = new System.Windows.Forms.TabPage();
+            this.tbPageDadosVeic = new System.Windows.Forms.TabPage();
             this.gboxDadosVeiculo = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageDadosComp = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbCombustivel = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,14 +57,14 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageCobertura = new System.Windows.Forms.TabPage();
             this.gboxDadosContrato = new System.Windows.Forms.GroupBox();
             this.cboxFranqRed = new System.Windows.Forms.CheckBox();
             this.cboxTerceiros = new System.Windows.Forms.CheckBox();
             this.cboxAcidentes = new System.Windows.Forms.CheckBox();
             this.cboxVidros = new System.Windows.Forms.CheckBox();
             this.cboxRoubos = new System.Windows.Forms.CheckBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPageCalculo = new System.Windows.Forms.TabPage();
             this.gboxResumo = new System.Windows.Forms.GroupBox();
             this.edtValorFranquia = new System.Windows.Forms.NumericUpDown();
             this.edtValorPremio = new System.Windows.Forms.NumericUpDown();
@@ -72,7 +72,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.edtValorApolice = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPageCadastro = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.edtUf = new System.Windows.Forms.TextBox();
@@ -105,57 +105,57 @@
             this.edtCpf = new System.Windows.Forms.MaskedTextBox();
             this.edtNome = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.tabPageRelatorio = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnEmail = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.tbPage1.SuspendLayout();
+            this.tbPageDadosVeic.SuspendLayout();
             this.gboxDadosVeiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorVeiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtAnoFabricacao)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabPageDadosComp.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPageCobertura.SuspendLayout();
             this.gboxDadosContrato.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPageCalculo.SuspendLayout();
             this.gboxResumo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorFranquia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorPremio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorApolice)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tabPageCadastro.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.tabPage7.SuspendLayout();
+            this.tabPageRelatorio.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tbPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tbPageDadosVeic);
+            this.tabControl1.Controls.Add(this.tabPageDadosComp);
+            this.tabControl1.Controls.Add(this.tabPageCobertura);
+            this.tabControl1.Controls.Add(this.tabPageCalculo);
+            this.tabControl1.Controls.Add(this.tabPageCadastro);
+            this.tabControl1.Controls.Add(this.tabPageRelatorio);
             this.tabControl1.Location = new System.Drawing.Point(3, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(794, 401);
             this.tabControl1.TabIndex = 1;
             // 
-            // tbPage1
+            // tbPageDadosVeic
             // 
-            this.tbPage1.Controls.Add(this.gboxDadosVeiculo);
-            this.tbPage1.Location = new System.Drawing.Point(4, 25);
-            this.tbPage1.Name = "tbPage1";
-            this.tbPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tbPage1.Size = new System.Drawing.Size(786, 372);
-            this.tbPage1.TabIndex = 0;
-            this.tbPage1.Text = "Dados do Veículo";
-            this.tbPage1.UseVisualStyleBackColor = true;
+            this.tbPageDadosVeic.Controls.Add(this.gboxDadosVeiculo);
+            this.tbPageDadosVeic.Location = new System.Drawing.Point(4, 25);
+            this.tbPageDadosVeic.Name = "tbPageDadosVeic";
+            this.tbPageDadosVeic.Padding = new System.Windows.Forms.Padding(3);
+            this.tbPageDadosVeic.Size = new System.Drawing.Size(786, 372);
+            this.tbPageDadosVeic.TabIndex = 0;
+            this.tbPageDadosVeic.Text = "Dados do Veículo";
+            this.tbPageDadosVeic.UseVisualStyleBackColor = true;
             // 
             // gboxDadosVeiculo
             // 
@@ -359,17 +359,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Marca";
             // 
-            // tabPage2
+            // tabPageDadosComp
             // 
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.tabControl2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(786, 372);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Dados Complementares do Veículo";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageDadosComp.Controls.Add(this.groupBox1);
+            this.tabPageDadosComp.Controls.Add(this.tabControl2);
+            this.tabPageDadosComp.Location = new System.Drawing.Point(4, 25);
+            this.tabPageDadosComp.Name = "tabPageDadosComp";
+            this.tabPageDadosComp.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDadosComp.Size = new System.Drawing.Size(786, 372);
+            this.tabPageDadosComp.TabIndex = 1;
+            this.tabPageDadosComp.Text = "Dados Complementares do Veículo";
+            this.tabPageDadosComp.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -477,16 +477,16 @@
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // tabPageCobertura
             // 
-            this.tabPage1.Controls.Add(this.gboxDadosContrato);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(786, 372);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Coberturas";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageCobertura.Controls.Add(this.gboxDadosContrato);
+            this.tabPageCobertura.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCobertura.Name = "tabPageCobertura";
+            this.tabPageCobertura.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCobertura.Size = new System.Drawing.Size(786, 372);
+            this.tabPageCobertura.TabIndex = 2;
+            this.tabPageCobertura.Text = "Coberturas";
+            this.tabPageCobertura.UseVisualStyleBackColor = true;
             // 
             // gboxDadosContrato
             // 
@@ -559,16 +559,16 @@
             this.cboxRoubos.Text = "Roubos";
             this.cboxRoubos.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // tabPageCalculo
             // 
-            this.tabPage3.Controls.Add(this.gboxResumo);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(786, 372);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "Cálculo da Apólice";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageCalculo.Controls.Add(this.gboxResumo);
+            this.tabPageCalculo.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCalculo.Name = "tabPageCalculo";
+            this.tabPageCalculo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCalculo.Size = new System.Drawing.Size(786, 372);
+            this.tabPageCalculo.TabIndex = 3;
+            this.tabPageCalculo.Text = "Cálculo da Apólice";
+            this.tabPageCalculo.UseVisualStyleBackColor = true;
             // 
             // gboxResumo
             // 
@@ -668,17 +668,17 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Valor da Apólice";
             // 
-            // tabPage4
+            // tabPageCadastro
             // 
-            this.tabPage4.Controls.Add(this.groupBox3);
-            this.tabPage4.Controls.Add(this.groupBox2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(786, 372);
-            this.tabPage4.TabIndex = 4;
-            this.tabPage4.Text = "Cadastro do Cliente";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPageCadastro.Controls.Add(this.groupBox3);
+            this.tabPageCadastro.Controls.Add(this.groupBox2);
+            this.tabPageCadastro.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCadastro.Name = "tabPageCadastro";
+            this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCadastro.Size = new System.Drawing.Size(786, 372);
+            this.tabPageCadastro.TabIndex = 4;
+            this.tabPageCadastro.Text = "Cadastro do Cliente";
+            this.tabPageCadastro.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -1016,6 +1016,40 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Nome";
             // 
+            // tabPageRelatorio
+            // 
+            this.tabPageRelatorio.Controls.Add(this.button2);
+            this.tabPageRelatorio.Controls.Add(this.btnEmail);
+            this.tabPageRelatorio.Location = new System.Drawing.Point(4, 25);
+            this.tabPageRelatorio.Name = "tabPageRelatorio";
+            this.tabPageRelatorio.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageRelatorio.Size = new System.Drawing.Size(786, 372);
+            this.tabPageRelatorio.TabIndex = 5;
+            this.tabPageRelatorio.Text = "Relatório";
+            this.tabPageRelatorio.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(258, 190);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(271, 28);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Imprimir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.Location = new System.Drawing.Point(258, 155);
+            this.btnEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(271, 28);
+            this.btnEmail.TabIndex = 2;
+            this.btnEmail.Text = "Enviar Dados por E-mail";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // btnAnterior
             // 
             this.btnAnterior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1054,40 +1088,6 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.button2);
-            this.tabPage7.Controls.Add(this.btnEmail);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(786, 372);
-            this.tabPage7.TabIndex = 5;
-            this.tabPage7.Text = "Relatório";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(258, 190);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(271, 28);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Imprimir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.Location = new System.Drawing.Point(258, 155);
-            this.btnEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(271, 28);
-            this.btnEmail.TabIndex = 2;
-            this.btnEmail.Text = "Enviar Dados por E-mail";
-            this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1100,32 +1100,32 @@
             this.Name = "FrmMain";
             this.Text = "FrmMain";
             this.tabControl1.ResumeLayout(false);
-            this.tbPage1.ResumeLayout(false);
-            this.tbPage1.PerformLayout();
+            this.tbPageDadosVeic.ResumeLayout(false);
+            this.tbPageDadosVeic.PerformLayout();
             this.gboxDadosVeiculo.ResumeLayout(false);
             this.gboxDadosVeiculo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorVeiculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtAnoFabricacao)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabPageDadosComp.ResumeLayout(false);
+            this.tabPageDadosComp.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPageCobertura.ResumeLayout(false);
             this.gboxDadosContrato.ResumeLayout(false);
             this.gboxDadosContrato.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.tabPageCalculo.ResumeLayout(false);
             this.gboxResumo.ResumeLayout(false);
             this.gboxResumo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorFranquia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorPremio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtValorApolice)).EndInit();
-            this.tabPage4.ResumeLayout(false);
+            this.tabPageCadastro.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
+            this.tabPageRelatorio.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1133,7 +1133,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tbPage1;
+        private System.Windows.Forms.TabPage tbPageDadosVeic;
         private System.Windows.Forms.GroupBox gboxDadosVeiculo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -1150,13 +1150,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageDadosComp;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPageCobertura;
+        private System.Windows.Forms.TabPage tabPageCalculo;
+        private System.Windows.Forms.TabPage tabPageCadastro;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbCombustivel;
         private System.Windows.Forms.Label label11;
@@ -1212,7 +1212,7 @@
         private System.Windows.Forms.MaskedTextBox edtCpf;
         private System.Windows.Forms.TextBox edtNome;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPageRelatorio;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnEmail;
     }
