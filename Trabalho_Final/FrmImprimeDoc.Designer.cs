@@ -43,7 +43,7 @@
             reportDataSource1.Name = "DadosRelatorio";
             reportDataSource1.Value = this.ApolicesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Trabalho_Final.ReportTeste.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Trabalho_Final.RelatorioApolice.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;

@@ -139,11 +139,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportTeste.rdlc" />
+    <EmbeddedResource Include="RelatorioApolice.rdlc" />
+    <EmbeddedResource Include="RelatorioCliente.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CORE.Apolices.datasource" />
     <None Include="Properties\DataSources\CORE.Clientes.datasource" />
     <None Include="Properties\DataSources\CORE.DBProjetoFinalEntities.datasource" />
+    <None Include="Properties\DataSources\CORE.FIPE.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

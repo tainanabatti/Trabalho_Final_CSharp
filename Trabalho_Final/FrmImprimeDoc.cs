@@ -17,6 +17,7 @@ namespace Trabalho_Final
         public FrmImprimeDoc(FrmMain frm)
         {
             InitializeComponent();
+            reportViewer1.LocalReport.SubreportProcessing += LocalReport_SubreportProcessing;
             main = frm;
         }
 
@@ -32,7 +33,15 @@ namespace Trabalho_Final
              .Select(x => new Apolices
              {
                  ValorApolice = x.ValorApolice,
+                 ValorDoBem = x.ValorDoBem,
+                 ValorFranquia = x.ValorFranquia,
+                 ValorPremio = x.ValorPremio,
+                 Placa = x.Placa,
+                 Chassi = x.Chassi,
+
              }).ToList();
+
+
 
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DadosRelatorio", ret));
@@ -40,6 +49,39 @@ namespace Trabalho_Final
             this.reportViewer1.RefreshReport();
 
     }
+        void LocalReport_SubreportProcessing(object sender, Microsoft.Reporting.WinForms.SubreportProcessingEventArgs e)
+        {
+            DBProjetoFinalEntities db = new DBProjetoFinalEntities();
+
+            
+           
+             //   var ret = db.Apolices.AsNoTracking()
+             //.Where(b => b.ClienteId.Equals(main.id_cliente_finaliza))
+             //.ToList()
+             //.Select(x => new Apolices
+             //{
+             //    ValorApolice = x.ValorApolice,
+             //    ValorDoBem = x.ValorDoBem,
+             //    ValorFranquia = x.ValorFranquia,
+             //    ValorPremio = x.ValorPremio,
+             //    Placa = x.Placa,
+             //    Chassi = x.Chassi,
+
+             //}).ToList();
+             //   e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DadosRelatorio", ret));
+
+            var retCliente = db.Clientes.AsNoTracking()
+                .Where(b => b.Id.Equals(main.id_cliente_finaliza))
+                .ToList()
+                .Select(x => new Clientes
+                {
+                    Nome = x.Nome,
+                    Id = x.Id,
+
+                }).ToList();
+            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DadosCliente", retCliente));
+        }
+
 
         private void ReportViewer1_Load(object sender, EventArgs e)
         {
