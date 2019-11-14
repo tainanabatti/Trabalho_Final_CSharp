@@ -32,6 +32,7 @@ namespace Trabalho_Final
         Apolices apolice;
         int fipe_id = 0;
         int combustivel_id;
+        public int id_cliente_finaliza = 0;
         public FrmMain()
         {
             InitializeComponent();
@@ -328,10 +329,10 @@ namespace Trabalho_Final
         }
         private void finalizarESalvar()
         {
-            int id_cliente = getNewIdCliente();
+            id_cliente_finaliza = getNewIdCliente();
             Clientes cliente = new Clientes()
             {
-                Id = id_cliente,
+                Id = id_cliente_finaliza,
                 Nome = edtNome.Text,
                 CPF = edtCpf.Text,
                 RG = edtRg.Text,
@@ -349,7 +350,7 @@ namespace Trabalho_Final
                 UF = edtUf.Text
             };
             this.db.Clientes.Add(cliente);
-            Apolices ap = fillApoliceWithData(id_cliente);
+            Apolices ap = fillApoliceWithData(id_cliente_finaliza);
             this.db.Apolices.Add(ap);
             this.db.SaveChanges();
             this.apolice = ap;
@@ -417,9 +418,12 @@ namespace Trabalho_Final
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            FrmRelatorio relatorio = new FrmRelatorio();
-            //imp.Text(montaImpressao());
-            relatorio.Show();
+            //FrmRel relatorio = new FrmRel(this);
+            ////imp.Text(montaImpressao());
+            //relatorio.ShowDialog();
+            FrmImprimeDoc frm = new FrmImprimeDoc(this);
+            frm.ShowDialog();
+            
         }
 
         private void enviarEmail()

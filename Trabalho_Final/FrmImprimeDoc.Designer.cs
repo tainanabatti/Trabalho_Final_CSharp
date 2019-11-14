@@ -29,11 +29,55 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ApolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApolicesBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DadosRelatorio";
+            reportDataSource1.Value = this.ApolicesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Trabalho_Final.ReportTeste.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.ReportViewer1_Load);
+            // 
+            // ClientesBindingSource
+            // 
+            this.ClientesBindingSource.DataSource = typeof(CORE.Clientes);
+            // 
+            // ApolicesBindingSource
+            // 
+            this.ApolicesBindingSource.DataSource = typeof(CORE.Apolices);
+            // 
+            // FrmImprimeDoc
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportViewer1);
+            this.Name = "FrmImprimeDoc";
             this.Text = "FrmImprimeDoc";
+            this.Load += new System.EventHandler(this.FrmImprimeDoc_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApolicesBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource ClientesBindingSource;
+        private System.Windows.Forms.BindingSource ApolicesBindingSource;
     }
 }
