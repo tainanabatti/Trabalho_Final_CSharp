@@ -431,7 +431,7 @@
         </TablixRowHierarchy>
         <DataSetName>DadosRelatorio</DataSetName>
         <Height>1.2cm</Height>
-        <Width>17.3495cm</Width>
+        <Width>17.34951cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -440,10 +440,9 @@
       </Tablix>
       <Subreport Name="Subreport4">
         <ReportName>RelatorioCliente</ReportName>
-        <Top>4.1402cm</Top>
-        <Left>5cm</Left>
+        <Top>1.96003cm</Top>
         <Height>7.6cm</Height>
-        <Width>7.5cm</Width>
+        <Width>17.34951cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

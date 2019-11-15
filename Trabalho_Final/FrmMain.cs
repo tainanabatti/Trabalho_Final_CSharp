@@ -54,8 +54,8 @@ namespace Trabalho_Final
             combustivelCache.Add("Gasolina", 1);
             combustivelCache.Add("Álcool", 2);
             combustivelCache.Add("Diesel", 3);
-            combustivelCache.Add("GNV", 4);
-            combustivelCache.Add("Flex", 5);
+            combustivelCache.Add("Flex", 4);
+            combustivelCache.Add("GNV", 5);
             combustivelCache.Add("Elétrico", 6);
             combustivelCache.Add("Outro", 7);
             cbCombustivel.DataSource = new BindingSource(combustivelCache, null);

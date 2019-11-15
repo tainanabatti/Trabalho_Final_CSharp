@@ -38,6 +38,7 @@ namespace Trabalho_Final
                  ValorPremio = x.ValorPremio,
                  Placa = x.Placa,
                  Chassi = x.Chassi,
+                 Roubo = x.Roubo,
 
              }).ToList();
 
@@ -76,7 +77,11 @@ namespace Trabalho_Final
                 .Select(x => new Clientes
                 {
                     Nome = x.Nome,
-                    Id = x.Id,
+                    CPF = x.CPF,
+                    Email = x.Email,
+                    CartMotorista = x.CartMotorista,
+                    CategoriaMot = x.CategoriaMot,
+                    Celular = x.Celular,
 
                 }).ToList();
             e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DadosCliente", retCliente));

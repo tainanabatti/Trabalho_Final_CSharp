@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ApolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ApolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApolicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ApolicesBindingSource
+            // 
+            this.ApolicesBindingSource.DataSource = typeof(CORE.Apolices);
             // 
             // reportViewer1
             // 
@@ -55,10 +59,6 @@
             // 
             this.ClientesBindingSource.DataSource = typeof(CORE.Clientes);
             // 
-            // ApolicesBindingSource
-            // 
-            this.ApolicesBindingSource.DataSource = typeof(CORE.Apolices);
-            // 
             // FrmImprimeDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -67,9 +67,10 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmImprimeDoc";
             this.Text = "FrmImprimeDoc";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmImprimeDoc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApolicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

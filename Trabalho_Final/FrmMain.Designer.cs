@@ -111,6 +111,12 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbPageDadosVeic.SuspendLayout();
             this.gboxDadosVeiculo.SuspendLayout();
@@ -374,6 +380,9 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.label37);
+            this.groupBox1.Controls.Add(this.label33);
+            this.groupBox1.Controls.Add(this.label32);
             this.groupBox1.Controls.Add(this.cbCombustivel);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.edtPlaca);
@@ -682,6 +691,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label36);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.edtUf);
             this.groupBox3.Controls.Add(this.edtCidade);
@@ -837,6 +847,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label35);
+            this.groupBox2.Controls.Add(this.label34);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.cbbCategoria);
             this.groupBox2.Controls.Add(this.label18);
@@ -1088,6 +1100,66 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Location = new System.Drawing.Point(56, 20);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(13, 17);
+            this.label32.TabIndex = 14;
+            this.label32.Text = "*";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(45, 68);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(13, 17);
+            this.label33.TabIndex = 15;
+            this.label33.Text = "*";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.Red;
+            this.label34.Location = new System.Drawing.Point(47, 18);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(13, 17);
+            this.label34.TabIndex = 16;
+            this.label34.Text = "*";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.ForeColor = System.Drawing.Color.Red;
+            this.label35.Location = new System.Drawing.Point(568, 18);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(13, 17);
+            this.label35.TabIndex = 17;
+            this.label35.Text = "*";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.Color.Red;
+            this.label36.Location = new System.Drawing.Point(385, 20);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(13, 17);
+            this.label36.TabIndex = 14;
+            this.label36.Text = "*";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.ForeColor = System.Drawing.Color.Red;
+            this.label37.Location = new System.Drawing.Point(382, 69);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(13, 17);
+            this.label37.TabIndex = 16;
+            this.label37.Text = "*";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1215,5 +1287,11 @@
         private System.Windows.Forms.TabPage tabPageRelatorio;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label37;
     }
 }
