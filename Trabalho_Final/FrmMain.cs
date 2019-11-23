@@ -17,7 +17,7 @@ namespace Trabalho_Final
     public enum EnumEstado
     {
         DADOS_VEICULO,
-        DADOS_VEIC_COMP,
+        //DADOS_VEIC_COMP,
         DADOS_CONTRATO,
         RESUMO,
         DADOS_CLIENTE,
@@ -110,11 +110,6 @@ namespace Trabalho_Final
                     //tabControl1.Controls.Remove(tabPageCadastro);
                     //tabControl1.Controls.Add(tabPageDadosComp);
                     //tabControl1.Controls.Remove(tbPageDadosVeic);
-                    setEstado(EnumEstado.DADOS_VEIC_COMP);
-
-                    break;
-                case EnumEstado.DADOS_VEIC_COMP:
-
                     if (edtChassi.Text == "" || edtPlaca.Text == "")
                     {
                         MessageBox.Show("Preencha todos os campos obrigatórios antes de prosseguir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -125,7 +120,21 @@ namespace Trabalho_Final
                         //tabControl1.Controls.Add(tabPageCobertura);
                         setEstado(EnumEstado.DADOS_CONTRATO);
                     }
+
                     break;
+                //case EnumEstado.DADOS_VEIC_COMP:
+
+                //    if (edtChassi.Text == "" || edtPlaca.Text == "")
+                //    {
+                //        MessageBox.Show("Preencha todos os campos obrigatórios antes de prosseguir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    }
+                //    else
+                //    {
+                //        //tabControl1.Controls.Remove(tabPageDadosComp);
+                //        //tabControl1.Controls.Add(tabPageCobertura);
+                //        setEstado(EnumEstado.DADOS_CONTRATO);
+                //    }
+                //    break;
                 case EnumEstado.DADOS_CONTRATO:
                     //tabControl1.Controls.Remove(tabPageCobertura);
                     //tabControl1.Controls.Add(tabPageCalculo);
@@ -199,7 +208,6 @@ namespace Trabalho_Final
                 tabControl1.Controls.Add(tabPageCalculo);
                 tabControl1.Controls.Remove(tbPageDadosVeic);
                 tabControl1.Controls.Remove(tabPageCobertura);
-                tabControl1.Controls.Remove(tabPageDadosComp);
                 tabControl1.Controls.Remove(tabPageRelatorio);
                 tabControl1.Controls.Remove(tabPageCadastro);
                 calculaValoresApolice();
@@ -207,7 +215,6 @@ namespace Trabalho_Final
             }
             else if(this.estadoBotao == EnumEstado.DADOS_VEICULO)
             {
-                tabControl1.Controls.Remove(tabPageDadosComp);
                 tabControl1.Controls.Remove(tabPageCalculo);
                 tabControl1.Controls.Remove(tabPageCobertura);
                 tabControl1.Controls.Remove(tabPageRelatorio);
@@ -216,21 +223,20 @@ namespace Trabalho_Final
                 tabControl1.Controls.Add(tbPageDadosVeic);
 
             }
-            else if(this.estadoBotao == EnumEstado.DADOS_VEIC_COMP)
-            {
-                tabControl1.Controls.Add(tabPageDadosComp);
-                tabControl1.Controls.Remove(tbPageDadosVeic);
-                tabControl1.Controls.Remove(tabPageCalculo);
-                tabControl1.Controls.Remove(tabPageCobertura);
-                tabControl1.Controls.Remove(tabPageRelatorio);
-                tabControl1.Controls.Remove(tabPageCadastro);
-            }
+            //else if(this.estadoBotao == EnumEstado.DADOS_VEIC_COMP)
+            //{
+            //    tabControl1.Controls.Add(tabPageDadosComp);
+            //    tabControl1.Controls.Remove(tbPageDadosVeic);
+            //    tabControl1.Controls.Remove(tabPageCalculo);
+            //    tabControl1.Controls.Remove(tabPageCobertura);
+            //    tabControl1.Controls.Remove(tabPageRelatorio);
+            //    tabControl1.Controls.Remove(tabPageCadastro);
+            //}
             else if (this.estadoBotao == EnumEstado.DADOS_CONTRATO)
             {
                 tabControl1.Controls.Add(tabPageCobertura);
                 tabControl1.Controls.Remove(tbPageDadosVeic);
                 tabControl1.Controls.Remove(tabPageCalculo);
-                tabControl1.Controls.Remove(tabPageDadosComp);
                 tabControl1.Controls.Remove(tabPageRelatorio);
                 tabControl1.Controls.Remove(tabPageCadastro);
             }
@@ -239,7 +245,7 @@ namespace Trabalho_Final
                 tabControl1.Controls.Add(tabPageCadastro);
                 tabControl1.Controls.Remove(tbPageDadosVeic);
                 tabControl1.Controls.Remove(tabPageCalculo);
-                tabControl1.Controls.Remove(tabPageDadosComp);
+                //tabControl1.Controls.Remove(tabPageDadosComp);
                 tabControl1.Controls.Remove(tabPageRelatorio);
                 tabControl1.Controls.Remove(tabPageCobertura);
                 btnProximo.Text = "Confirmar Contratação";
@@ -251,7 +257,7 @@ namespace Trabalho_Final
                 tabControl1.Controls.Add(tabPageRelatorio);
                 tabControl1.Controls.Remove(tbPageDadosVeic);
                 tabControl1.Controls.Remove(tabPageCalculo);
-                tabControl1.Controls.Remove(tabPageDadosComp);
+                //tabControl1.Controls.Remove(tabPageDadosComp);
                 tabControl1.Controls.Remove(tabPageCadastro);
                 tabControl1.Controls.Remove(tabPageCobertura);
                 btnSair.Text = "Sair";
@@ -266,9 +272,9 @@ namespace Trabalho_Final
         {
             switch (this.estadoBotao)
             {
-                case EnumEstado.DADOS_VEIC_COMP:
-                    setEstado(EnumEstado.DADOS_VEICULO);
-                    break;
+                //case EnumEstado.DADOS_VEIC_COMP:
+                //    setEstado(EnumEstado.DADOS_VEICULO);
+                //    break;
                 case EnumEstado.DADOS_CONTRATO:
                     //tabControl1.Controls.Remove(tabPageCobertura);
                     //tabControl1.Controls.Add(tabPageDadosComp);
@@ -387,7 +393,7 @@ namespace Trabalho_Final
             return apolice;
         }
 
-        private string montaImpressao()
+        private string geraEmail()
         {
             Clientes c = this.db.Clientes.Where(cl => cl.Id.Equals(this.apolice.ClienteId)).ToList()[0];
             StringBuilder sb = new StringBuilder();
@@ -395,18 +401,22 @@ namespace Trabalho_Final
                 .Append("<br>----------------------</br>")
                 .Append("<br>DADOS DO CLIENTE</br>")
                 .Append("<br>Nome: ").Append(c.Nome).Append("</br>")
-                .Append("<br>Data de Nascimento:").Append(c.DataNascimento).Append("</br>")
+                .Append("<br>Data de Nascimento: ").Append(c.DataNascimento).Append("</br>")
                 .Append("<br>CPF: ").Append(c.CPF).Append("</br>")
                 .Append("<br>Endereço:").Append(c.Endereco).Append(" - ").Append(c.CEP).Append(" - ").Append(c.Cidade)
                         .Append(" - ").Append(c.UF).Append("</br>")
-                .Append("<br>Telefone:").Append(c.Telefone).Append("</br>")
+                .Append("<br>Telefone: ").Append(c.Telefone).Append("</br>")
                 .Append("<br> ---------------------- </br>")
                 .Append("<br>DADOS DO CONTRATO</br>")
-                .Append("<br>Vidros:").Append(apolice.Vidros ? "Sim" : "Não").Append("</br>")
-                .Append("<br>Roubos:").Append(apolice.Roubo ? "Sim" : "Não").Append("</br>")
+                .Append("<br>Vidros: ").Append(apolice.Vidros ? "Sim" : "Não").Append("</br>")
+                .Append("<br>Roubos: ").Append(apolice.Roubo ? "Sim" : "Não").Append("</br>")
                 .Append("<br>Acidentes:").Append(apolice.Acidentes ? "Sim" : "Não").Append("</br>")
                 .Append("<br>Danos Terceiros:").Append(apolice.DanosTerceiros ? "Sim" : "Não").Append("</br>")
-                .Append("<br>Franquia Reduzida:").Append(apolice.FranquiaRed ? "Sim" : "Não").Append("</br>");
+                .Append("<br>Franquia Reduzida: ").Append(apolice.FranquiaRed ? "Sim" : "Não").Append("</br>")
+                .Append("<br>Valor do Bem: ").Append(apolice.ValorDoBem).Append("</br>")
+                .Append("<br>Valor da Apólice: ").Append(apolice.ValorApolice).Append("</br>")
+                .Append("<br>Valor do Prêmio: ").Append(apolice.ValorPremio).Append("</br>")
+                .Append("<br>Valor do Franquia: ").Append(apolice.ValorFranquia).Append("</br>");
             return sb.ToString();
 
         }
@@ -437,7 +447,7 @@ namespace Trabalho_Final
                 objEmail.Priority = MailPriority.Normal;
                 objEmail.IsBodyHtml = true;
                 objEmail.Subject = "Relatório da Apólice";
-                objEmail.Body = montaImpressao();
+                objEmail.Body = geraEmail();
                 objEmail.SubjectEncoding = Encoding.GetEncoding("ISO-8859-1");
                 objEmail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
                 SmtpClient objSmtp = new SmtpClient();
@@ -460,6 +470,14 @@ namespace Trabalho_Final
             enviarEmail();
         }
 
-       
+        private void GboxDadosContrato_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
