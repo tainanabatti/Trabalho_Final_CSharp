@@ -321,7 +321,7 @@ namespace Trabalho_Final
             {
                 Id = id_cliente_finaliza,
                 Nome = edtNome.Text,
-                CPF = edtCpf.Text,
+                CPF = edtCpf.Text.Replace(",","."),
                 RG = edtRg.Text,
                 OrgaoEmissor = edtOrgaoEmissor.Text,
                 DataNascimento = edtDataNascimento.Value,
