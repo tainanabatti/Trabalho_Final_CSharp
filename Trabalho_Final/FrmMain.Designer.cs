@@ -764,7 +764,7 @@
             this.groupBox4.Controls.Add(this.label43);
             this.groupBox4.Location = new System.Drawing.Point(22, 304);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1039, 209);
+            this.groupBox4.Size = new System.Drawing.Size(1076, 209);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dados Complementares do Veículo";

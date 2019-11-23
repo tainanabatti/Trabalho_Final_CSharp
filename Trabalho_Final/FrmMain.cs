@@ -103,13 +103,6 @@ namespace Trabalho_Final
             switch (this.estadoBotao)
             {
                 case EnumEstado.DADOS_VEICULO:
-                    //tabControl1.Controls.Remove(tabPageDadosComp);
-                    //tabControl1.Controls.Remove(tabPageCalculo);
-                    //tabControl1.Controls.Remove(tabPageCobertura);
-                    //tabControl1.Controls.Remove(tabPageRelatorio);
-                    //tabControl1.Controls.Remove(tabPageCadastro);
-                    //tabControl1.Controls.Add(tabPageDadosComp);
-                    //tabControl1.Controls.Remove(tbPageDadosVeic);
                     if (edtChassi.Text == "" || edtPlaca.Text == "")
                     {
                         MessageBox.Show("Preencha todos os campos obrigatórios antes de prosseguir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -122,27 +115,10 @@ namespace Trabalho_Final
                     }
 
                     break;
-                //case EnumEstado.DADOS_VEIC_COMP:
-
-                //    if (edtChassi.Text == "" || edtPlaca.Text == "")
-                //    {
-                //        MessageBox.Show("Preencha todos os campos obrigatórios antes de prosseguir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                //    }
-                //    else
-                //    {
-                //        //tabControl1.Controls.Remove(tabPageDadosComp);
-                //        //tabControl1.Controls.Add(tabPageCobertura);
-                //        setEstado(EnumEstado.DADOS_CONTRATO);
-                //    }
-                //    break;
                 case EnumEstado.DADOS_CONTRATO:
-                    //tabControl1.Controls.Remove(tabPageCobertura);
-                    //tabControl1.Controls.Add(tabPageCalculo);
                     setEstado(EnumEstado.RESUMO);
                     break;
                 case EnumEstado.RESUMO:
-                    //tabControl1.Controls.Remove(tabPageCalculo);
-                    //tabControl1.Controls.Add(tabPageCadastro);
                     setEstado(EnumEstado.DADOS_CLIENTE);
                     break;
                 case EnumEstado.DADOS_CLIENTE:
@@ -319,7 +295,12 @@ namespace Trabalho_Final
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            Close();
+
+            for (int intIndex = Application.OpenForms.Count - 1; intIndex >= 0; intIndex--)
+            {
+                if (Application.OpenForms[intIndex] != this)
+                    Application.OpenForms[intIndex].Close();
+            }
         }
 
         private int getNewIdCliente()
@@ -428,9 +409,6 @@ namespace Trabalho_Final
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //FrmRel relatorio = new FrmRel(this);
-            ////imp.Text(montaImpressao());
-            //relatorio.ShowDialog();
             FrmImprimeDoc frm = new FrmImprimeDoc(this);
             frm.ShowDialog();
             
@@ -467,7 +445,16 @@ namespace Trabalho_Final
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            enviarEmail();
+            try
+            {
+                button2.Enabled = false;
+                enviarEmail();
+                MessageBox.Show("E-mail enviado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                button2.Enabled = true;
+            } catch (Exception exc)
+            {
+                MessageBox.Show("Erro ao enviar e-mail!\n" + exc.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void GboxDadosContrato_Enter(object sender, EventArgs e)

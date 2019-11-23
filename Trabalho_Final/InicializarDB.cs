@@ -25,17 +25,17 @@ namespace Trabalho_Final
                 db.Marcas.Add(new Marcas()
                 {
                     Id = 1,
-                    Nome = "Volkswagen"
+                    Nome = "Ford"
                 });
                 db.Marcas.Add(new Marcas()
                 {
                     Id = 2,
-                    Nome = "Honda"
+                    Nome = "Hyundai"
                 });
                 db.Marcas.Add(new Marcas()
                 {
                     Id = 3,
-                    Nome = "Mistubishi"
+                    Nome = "Chevrolet"
                 });
                 db.SaveChanges();
             }
@@ -50,25 +50,25 @@ namespace Trabalho_Final
                 {
                     Id = 1,
                     MarcaId = id_marca -1,
-                    Nome = "Golf GTI"
+                    Nome = "Elantra"
                 });
                 db.Modelos.Add(new Modelos()
                 {
                     Id = 2,
                     MarcaId = id_marca -2,
-                    Nome = "Jetta TSI"
+                    Nome = "Captiva"
                 });
                 db.Modelos.Add(new Modelos()
                 {
                     Id = 3,
                     MarcaId = id_marca,
-                    Nome = "Civic"
+                    Nome = "Fiesta"
                 });
                 db.Modelos.Add(new Modelos()
                 {
                     Id = 4,
                     MarcaId = id_marca,
-                    Nome = "Lancer Evolution"
+                    Nome = "Focus"
                 });
 
                 db.SaveChanges();
@@ -85,29 +85,29 @@ namespace Trabalho_Final
                     {
                         Id = 1,
                         ModeloId = modelo_id,
-                        Ano = 2018,
-                        Valor = 133254.00
+                        Ano = 2019,
+                        Valor = 100000.00
                     });
                     db.FIPE.Add(new FIPE()
                     {
                         Id = 2,
                         ModeloId = modelo_id-1,
-                        Ano = 2018,
-                        Valor = 95850.00
+                        Ano = 2016,
+                        Valor = 97500.00
                     });
                     db.FIPE.Add(new FIPE()
                     {
                         Id = 3,
                         ModeloId = modelo_id-2,
-                        Ano = 2018,
-                        Valor = 91058.00
+                        Ano = 2017,
+                        Valor = 80000.00
                     });
                     db.FIPE.Add(new FIPE()
                     {
                         Id = 4,
-                        ModeloId = modelo_id,
+                        ModeloId = modelo_id-3,
                         Ano = 2015,
-                        Valor = 140275.00
+                        Valor = 120000.00
                     });
                     db.SaveChanges();
                 }
