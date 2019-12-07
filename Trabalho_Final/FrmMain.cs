@@ -337,6 +337,7 @@ namespace Trabalho_Final
                 UF = edtUf.Text
             };
             this.db.Clientes.Add(cliente);
+
             Apolices ap = fillApoliceWithData(id_cliente_finaliza);
             this.db.Apolices.Add(ap);
             this.db.SaveChanges();
@@ -463,6 +464,11 @@ namespace Trabalho_Final
         }
 
         private void GroupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GboxDadosVeiculo_Enter(object sender, EventArgs e)
         {
 
         }

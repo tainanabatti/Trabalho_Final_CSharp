@@ -92,5 +92,10 @@ namespace Trabalho_Final
         {
 
         }
+
+        private void BtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
